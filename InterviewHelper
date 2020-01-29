@@ -97,7 +97,7 @@ Q> delete a note in a linkedlist ?
 Q> treare two linkedlist , you need to find out the point of intercection where the both list meet ?
 Q> why does we required getter and setter as we can create object an set values by calling the variable directly ?
 Q> list internal implementation?
-Q> write a custom immutable class ?
+Q> write a custom immutable class if a calss contains Address as an variable in it  ?
 Q> define a transient variable and serialize it , make sure the transient variable data must be store in streams ?
 Q> how to write cusom implementation for serialization ?
 Q> externalization concept ? advantage over serialization ?
@@ -110,6 +110,7 @@ Q> hashset internal implementation ?
 Q> abstract class vs interface in java 8 ?
 Q> scopes in spring ?
 Q> request/session scope diff?
+Q> volatile when to use , when not ? AtomicInteger uses?
 
 
 
