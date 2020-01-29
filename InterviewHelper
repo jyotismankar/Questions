@@ -111,6 +111,7 @@ Q> abstract class vs interface in java 8 ?
 Q> scopes in spring ?
 Q> request/session scope diff?
 Q> volatile when to use , when not ? AtomicInteger uses?
+Q> Why to use char[] array over a string for storing passwords in Java?
 
 
 
