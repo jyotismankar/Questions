@@ -1,0 +1,126 @@
+Covium Interview Question Telephonic Round?
+-----------------------------
+Q> HashMap internal implementation ? what the changes are there in java 8 hash map intermnal implementation(Hash collisions) ?
+Q> what will happen if multiple thread try to access a value in  HashMap?
+Q> ConcurrentHashMap internal implementation ?
+Q> why does we need to call wait and notify inside synchronized area? what will happen if i call it outside the synchronized block ?
+Q> give me a example where exactly in your application you have used multithreading ?
+Q> in mmt sometimes upon clicking a calender we can see lowest fare of a flight but when we click the date we can see that price got changes to something else,
+	and that flight also not there in the list , because that flight would have been departed  ? so how can you improve this case without any interaction with db ?
+	case 1: you can think all the data you have in client which you would have received in your last sync call to server ?
+Q> what is use of message Queue ? example a usecase of your application where have you used ?
+Q> wave you used kafka ? and what is the use of kafpa, and have you ever thought to improvise your current way of implementation of message queue to kafka ?
+	can you tell me a use case where do you think you can utilize it if not used so far ? 
+
+
+FreshWorks interview questions:
+-----------------------------------    
+Q> explain Binary search ? and why/where to use it ? write it using recursion ?
+Q> why we need rest webservuces and what is the key factor to deide wheather to write webservices or any other api ?
+Q> what is patch and put call do in the rest api call?
+Q> use of jenkins , with example, 
+Q> list out the regularlly used git command and how to revert back a commit amoung multiple commits ?
+
+
+28-01-2020
+----------
+Q> suppose capacity of an ArrayList is 100(i definned): 
+    i have filled 50 objects in it and tried to print 60th element what woule be the response ?
+Q> find the missing number in an array which has all consecutive nos : 
+    exa arr[] = {10,11,12,13,14,15}//find missing no give the optimal solution 
+Q> take a input of numbers , and try to say if its power of 2 or not, if the no is power of 2 return true , 
+    else return the next element which is power    of 2  ;
+    exa: input : 4 return true;
+         input : 5 return 8;
+Q> employee table has , id, name , dept name , sal 
+    Dept table has name , id 
+    print employee id, dept name , whose salary is maximun department wisel
+    
+Q> what is clustered index in db?
+Q> if i put 50 employee object in Treemap , on whcih order it will print ?
+Q> in Employee class i implemented only equals(), and returning true inside the equals methods.
+    i have created 50 employee objects and pushed into a set. what would be the size of set ? and why ?
+Q> in Employee class i implemented only equals(), and returning false inside the equals methods.and implemeted hashcode returning '1' always
+    i have created 50 employee objects and pushed into a set. what would be the size of set ? and why ?
+Q> How  G1 garbage collector works internally ?
+Q> how to track the no of failure tasks in multithreaded environment and do you do after that if you found a exception?
+Q> how to typecast parent to child
+class prent {
+int x = 10;
+int m1(){
+sysout (x);
+}
+}  
+
+class child extends prent {
+int x = 5;
+int m1(){
+sysout (x);
+}
+}
+    
+prent p = new child();
+p.m1();o/p
+Child c = new Child())
+(c)p.m1();//o/p
+
+
+-------------------------------
+video conference round :
+
+what is autoclosable , 
+
+maven commands to build  ,
+
+maven profile , 
+
+how to make spring bean threadsafe , 
+
+is it posible to write try without catch and final;
+
+java 8 hashmap improvements , 
+
+internal implementation of hashset , and linkedhashset 
+
+difference b/w hashmap and linkedhashmap 
+ 
+how to log custom classes and the expression using log4j
+
+
+----------------------------------------------------------
+covium 2nd and 3rd technical round: 
+
+Q> what is boot-inf?
+Q> write  a programme to print top view of a tree?
+Q> write a programme to take 2 string as an parameter , return true , if one string can be converted to another string after doing only one time modifiation liek insert, update or delete (only there 3 operation needed );
+Q> delete a note in a linkedlist ? 
+Q> treare two linkedlist , you need to find out the point of intercection where the both list meet ?
+Q> why does we required getter and setter as we can create object an set values by calling the variable directly ?
+Q> list internal implementation?
+Q> write a custom immutable class ?
+Q> define a transient variable and serialize it , make sure the transient variable data must be store in streams ?
+Q> how to write cusom implementation for serialization ?
+Q> externalization concept ? advantage over serialization ?
+Q> vilatile variable ?
+Q> threas life cycle?
+Q> spring core life cycle ?
+Q> transaction propagation ? and how to start a transactin in spring?
+Q> how are you migrating your application to spring boot(monolythic to microservices type ) ?
+Q> hashset internal implementation ?
+Q> abstract class vs interface in java 8 ?
+Q> scopes in spring ?
+Q> request/session scope diff?
+
+
+
+------------------------------------
+JPMC teleponic >
+Q> what is a view , ? 
+Q> what is index on view? 
+Q> search api design in rest in detail with optimization ?
+Q> when to use runnable an theread? why callable practical implementation example of your application ?
+Q> spring bean lifecycle?
+Q> database query basic using groupby ?
+Q> can we use groupby with where ?why
+Q> design pattern you have worked upon ? explain it by throwing a problematic statement ?and why did you choose it ?
+Q> have you used any concurrent collection ?
