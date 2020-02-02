@@ -157,6 +157,14 @@ Q> hashmap internal implementation ?
 Q> how pubsub model works , ? message queue questions?
 Q> LRU implimentation for a array with 3 entries ?
 Q> how does subscriber get notified with any updation happens in a queue (multithreading quesions )?
+Q> Difference between flatMap vs Map (in java stream api )?
+Q> design LRU using an array with 3 elements ?
+Ans: use linkedlist and hashmap for the optimun result
+Q> example of builder pattern and write sample example to illustrate that ?
+Q> how pub sub model works ?
+Q> List l = new ArrayList()   vs Arraylist l = new ArrayList() difference ?
+Q> functional interace ? why lamda epression ?
+
 
 
 
