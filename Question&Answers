@@ -9,4 +9,17 @@ and if it finds that the modCount has been modified after this iterator has been
 
 Fail-Safe iterators don’t throw any exceptions if a collection is structurally modified while iterating over it. This is because, they operate on the clone of the collection, not on the original collection and that’s why they are called fail-safe iterators. Iterator on CopyOnWriteArrayList, ConcurrentHashMap classes are examples of fail-safe Iterator.
 
-Q> 
+Q> Advantages and disadvantages of static variable?
+
+The static variables/methods belong to the class rather than an instance of the class.
+They occupy memory in method area or pergem memory space where garbage collector never works .
+You can not control creation and destruction of static variable. Usefully they have been created at program loading and 
+destroyed when program unload (or when JVM shuts down).
+so if we use static variable more there might be a change of cnsuming more memory which does not signify the purpose .
+when do you need :then ?
+
+---> Only use when a variable which is used globally ,Here global means across all the instances of a java class
+
+
+ 
+ 
