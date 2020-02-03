@@ -156,6 +156,21 @@ Q> how pub sub model works ?
 Q> List l = new ArrayList()   vs Arraylist l = new ArrayList() difference ?
 Q> functional interace ? why lamda epression ?
 
+-----------------------------
+Azuga 2nd round: 
+
+Q> given a sorted  array , need to find out the first occurance of non -ve integer from that array ?
+condition : complexity should be < o(n).
+Q> given a binary tree , print the right view of the tree?
+Q given a m*n matrix, need to find out the shortest path to reac the button ?
+consition : at a time one move allowed (diagonal left or right , vertically down)
+Q> given a list<Employee> , write a function which will accept a argument as list<Employee> , return a list whose salary > 1lakh and age>40
+ans: use java 8 stream api
+Q> what is the dis advantage of using static variable?
+Q> difference between put and patch in rest ?
+Q> how fail safe iterater internally works?
+Q> thread local ?
+
 
 
 
