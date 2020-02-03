@@ -20,9 +20,9 @@ when do you need :then ?
 
 ---> Only use when a variable which is used globally ,Here global means across all the instances of a java class
 
-Q> Difference b/q PATCH and PUT?
+Q> Difference b/w PATCH and PUT?
 PUT means replace the entire ebject/ json
-PATRCH means modify a specific value in an object/json
+PATCH means modify a specific value in an object/json
  {
  id : "483843847",
  name: "jitu",
