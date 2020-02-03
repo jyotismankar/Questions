@@ -168,7 +168,7 @@ Q> given a list<Employee> , write a function which will accept a argument as lis
 ans: use java 8 stream api
 Q> what is the dis advantage of using static variable?
 Q> difference between put and patch in rest ?
-Q> how fail safe iterater internally works?
+Q> how fail safe iterater internally works? what makes the fail safe iterator not to through cuncurrentmodificationException ?
 Q> thread local ?
 
 
