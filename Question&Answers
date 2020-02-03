@@ -30,7 +30,9 @@ PATCH means modify a specific value in an object/json
  company : "xyz"
  }
  consider the above json , if i just wanted to modify company name to abc  , i can do it throught patch 
- but if i want to chane the entire object i have to make a put call , and might be in request i need to send the entire object again .
+ but if i want to change the entire object i have to make a put call , and might be in request i need to send the entire object again .
+ cann't you achive the behaviour of PATCH using PUT ?
+ yes ! you can , but the payload(request body) size would be more containing the full object structure, which will make the request heavy. 
  
  Q> 
 
