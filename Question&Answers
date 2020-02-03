@@ -20,6 +20,20 @@ when do you need :then ?
 
 ---> Only use when a variable which is used globally ,Here global means across all the instances of a java class
 
+Q> Difference b/q PATCH and PUT?
+PUT means replace the entire ebject/ json
+PATRCH means modify a specific value in an object/json
+ {
+ id : "483843847",
+ name: "jitu",
+ age : "28",
+ company : "xyz"
+ }
+ consider the above json , if i just wanted to modify company name to abc  , i can do it throught patch 
+ but if i want to chane the entire object i have to make a put call , and might be in request i need to send the entire object again .
+ 
+ Q> 
+
 
  
  
