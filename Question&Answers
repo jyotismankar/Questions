@@ -44,15 +44,18 @@ PATCH means modify a specific value in an object/json
  In parallel execution, if number of tasks are more than available cores at a given time, the remaining tasks are queued waiting for 
  currently running task to finish.
  The tasks provided to the streams are typically the iterative operations performed on the elements of a collection or array or from other dynamic sources. Parallel execution of streams run multiple iterations simultaneously in different available cores.
+Q4> When to use Sequential and when to use Parallel streams ?
+ans: when we use Parallel streams , we can not predict the oup put sequence , as its run paralally .
+but when you want to retain  the o/p sequence , then go for normal streams.
 
-Q4> how to filter a list using stream with multiple condition ?
+Q5> how to filter a list using stream with multiple condition ?
 
 List<String> names = Arrays.asList("Melisandre","Sansa","Jon","Daenerys","Joffery");
         List<String> longnames = names.stream()  
                 .filter(str -> str.length() > 6 && str.length() < 8) //Multiple conditions
                 .collect(Collectors.toList());  
         longnames.forEach(System.out::println);
-Q5> What is map() and flatMap() in Java 8 Stream ?
+Q6> What is map() and flatMap() in Java 8 Stream ?
 
 Map take a Stream and transform it to another Stream. where as flatMap first apply map function and than flattens the result .
 FlatMap example :-
