@@ -9,7 +9,7 @@ and if it finds that the modCount has been modified after this iterator has been
 
 Fail-Safe iterators don’t throw any exceptions if a collection is structurally modified while iterating over it. This is because, they operate on the clone of the collection, not on the original collection and that’s why they are called fail-safe iterators. Iterator on CopyOnWriteArrayList, ConcurrentHashMap classes are examples of fail-safe Iterator.
 
-Q> Advantages and disadvantages of static variable?
+Q1> Advantages and disadvantages of static variable?
 
 The static variables/methods belong to the class rather than an instance of the class.
 They occupy memory in method area or pergem memory space where garbage collector never works .
@@ -20,7 +20,7 @@ when do you need :then ?
 
 ---> Only use when a variable which is used globally ,Here global means across all the instances of a java class
 
-Q> Difference b/w PATCH and PUT?
+Q2> Difference b/w PATCH and PUT?
 PUT means replace the entire ebject/ json
 PATCH means modify a specific value in an object/json
  {
@@ -34,7 +34,7 @@ PATCH means modify a specific value in an object/json
  cann't you achive the behaviour of PATCH using PUT ?
  yes ! you can , but the payload(request body) size would be more containing the full object structure, which will make the request heavy. 
  
- Q> Sequential vs Parallel streams in java 8?
+ Q3> Sequential vs Parallel streams in java 8?
  What is Stream ? 
  Ans : stream is not a data structure instead it takes input from the Collections, Arrays or I/O channels. Streams don't change the 
  original data structure, they only provide the result as per the pipelined methods.
@@ -45,16 +45,35 @@ PATCH means modify a specific value in an object/json
  currently running task to finish.
  The tasks provided to the streams are typically the iterative operations performed on the elements of a collection or array or from other dynamic sources. Parallel execution of streams run multiple iterations simultaneously in different available cores.
 
-Q> how to filter a list using stream with multiple condition ?
+Q4> how to filter a list using stream with multiple condition ?
 
 List<String> names = Arrays.asList("Melisandre","Sansa","Jon","Daenerys","Joffery");
         List<String> longnames = names.stream()  
                 .filter(str -> str.length() > 6 && str.length() < 8) //Multiple conditions
                 .collect(Collectors.toList());  
         longnames.forEach(System.out::println);
-Q> 
+Q5> What is map() and flatMap() in Java 8 Stream ?
 
+Map take a Stream and transform it to another Stream. where as flatMap first apply map function and than flattens the result .
+FlatMap example :-
+List evens = Arrays.asList(2, 4, 6);
+List odds = Arrays.asList(3, 5, 7);
+List primes = Arrays.asList(2, 3, 5, 7, 11);
+       
+List numbers = Stream.of(evens, odds, primes)
+               .flatMap(list -> list.stream())
+               .collect(Collectors.toList());
+       
+System.out.println("flattend list: " + numbers);
 
+Output:
+flattend list: [2, 4, 6, 3, 5, 7, 2, 3, 5, 7, 11]
+
+Map example : 
+List listOfIntegers = Stream.of("1", "2", "3", "4")
+               .map(Integer::valueOf)
+               .collect(Collectors.toList());
+Q6> 
 
 
  
