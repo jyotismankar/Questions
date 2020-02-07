@@ -170,6 +170,45 @@ Q> what is the dis advantage of using static variable?
 Q> difference between put and patch in rest ?
 Q> how fail safe iterater internally works? what makes the fail safe iterator not to through cuncurrentmodificationException ?
 Q> thread local ?
+---------------------------
+explain what does these annotation do in spring boot?
+@bean
+@configure , 
+@component
+Q> what is interceptor in spring boot and how to achieve it?
+Q> if i want the interceptor to work for few requests and not for few requests how to achieve that ?
+Q> what is @postconstruct ?
+Q> in a interface if i declare 1 abstract method and one default methos ? can i still call that interface as @functional interface ?
+Q> write a programme to find occurance of each character in a string , and print top 2 occurance of the string ?
+Q> how pub sub works , and rabbit mq internal detaiils>
+Q> what is topics, and exchage?
+how the consumer received the data from queue in rabbit mq?
+Q> in a given array go in forword direction adn try to replace the each element with its next element which is greater then that element , and for 1st and last element replace it with -1 if not grter element is there 
+exa  : int arr[] = {99,67, 58, 77,85,88}
+o/p:   -1, 77,77,85,88,-1
+conditin : complexity should be <=O(n)
+Q> 
+
+----------------------------
+coviam 5th round zoom conference questions:
+
+Q> design a trip adviser package system ?shared a link to write sample code for the same which he can access at the same time 
+Q> how to scale the application , and how to provide security to the system ?
+Q> implement a rate limitting algorithim for the same ?
+Q> write a singleton class in the shared codepad.
+(Note : while writing keep in mind , it shoule be thread safe , you implement using doubl locking principle, it should not be cloned
+and if the class consists any other object mmake sure you are handing the case too)
+Q>tell me a situation where you have suggested something to your teammates , it might be design level it might functional level , whcih 
+they denied to accept ?
+Q> tell me a good solution you have suggested to your teams?
+Q> tell me a exception you have recently fixed and you are satisfied after fixing the issue?
+Q> Tell me a good day when you feel you are the best for this job ?
+Q> why do you want to join this company ?
+Q> what makes you motivated to work ?
+Q> what is your expectation from the company ?
+Q> where do you want to see yourself after 5 years ?
+Q> when do you feel more depressed at yor work ?
+
 
 
 
