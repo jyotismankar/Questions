@@ -209,6 +209,59 @@ Q> what is your expectation from the company ?
 Q> where do you want to see yourself after 5 years ?
 Q> when do you feel more depressed at yor work ?
 
+publicis sapient 
+-----------------
+hateus, versioning, pegination , end points creations  , swaggers , 
+api securites(jwt , iam integration  api gateways ,authentication , authorization )
+rest fundamantals of api creations like versioning
+cloud services(azure, gcp, aws,putal)
+graphql, grpc, dataprocessing solutions , spark , storm , language  go lang, camel , node, platform esb, etc, 
+
+microservices advance design principle , like  saga, cqrs, api composer, bounded context, cap etc 
+
+
+
+identifying the bounded context in the current microservices .
+
+
+
+Ds & algo preparations?
+------------------------
+traversal of a tree
+level order traversal of a tree
+zigzag order traversal
+ancestors of a tree
+ancestor of a node
+find kth ancestr of a node
+find lowest common  ancestor of a tree
+find maximun sum of a level 
+vertical order traversal
+boundery/diagonal traversal of a tree
+find height of a tree
+find height of a node from root 
+convert tree to double linked list 
+top view of a tree
+button view of a tree
+left view of a tree
+mirror tree
+find if two trees are identical or not
+check if a tree is BST or not
+inorder successor of a tree/BST
+symetric tree
+Minheap/maxHeap
+implement Queue using 2 stacks , 
+reverse a stack using stack operations
+reverse a linkedlist 
+
+
+
+
+
+
+
+
+ 
+
 
 
 
