@@ -211,6 +211,15 @@ Q> when do you feel more depressed at yor work ?
 
 publicis sapient 
 -----------------
+Q> how to scale a application 
+Q> what is contract fast in agile while exposing a service 
+Q> what is service discovery 
+Q> how do you document Rest Api :(ans: using swagger tool)
+Q>how to deal with fault tolerance ? 
+ans: using circuitbreaker principle
+Q>how to check server logs , if there are 10 servers then how to you know in which serve instance the log the exception is there
+ans: using elk stack tool
+Q> 
 hateus, versioning, pegination , end points creations  , swaggers , 
 api securites(jwt , iam integration  api gateways ,authentication , authorization )
 rest fundamantals of api creations like versioning
