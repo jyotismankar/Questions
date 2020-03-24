@@ -285,6 +285,31 @@ reverse a linkedlist
 
 
 
+Q> Manthan System
+
+1> How to check if a message has been delivered to the consumer or not in RabbitQueue?
+2> how to copy a database datas to another table (50m records are present) using java ?
+3>
+class A {
+public void m1();
+public void m2();
+public static synchronized void m3();
+public synchronized void m4();
+}
+can simultaniously 4 threas access this Function A? 
+4> how to design snake and ladar game?
+5> create a save registration usinf spring mvc and jsp 
+6> cretae an immutable class which is havind a date object in it 
+clss Person {
+Date date;
+int age 
+}
+
+create an imutable object ?
+Q> 
+
+http://highscalability.com/blog/2017/12/11/netflix-what-happens-when-you-press-play.html
+System design for netflix.
 
 
 
