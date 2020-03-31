@@ -311,6 +311,14 @@ Q>
 http://highscalability.com/blog/2017/12/11/netflix-what-happens-when-you-press-play.html
 System design for netflix.
 
+interview ?
+Q> how to design search api which will add and retrive contacts  with minimal time complexity ?
+Q> how trie datastructre works ?
+q> factory vs abstract factory ?
+q> controller uses which design pattern ?
+Q> how to implement a cache of size 5  with eviction policy ?(LRU implementation using java )
+
+
 
 
 
