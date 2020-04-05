@@ -77,6 +77,18 @@ List listOfIntegers = Stream.of("1", "2", "3", "4")
                .map(Integer::valueOf)
                .collect(Collectors.toList());
 Q6> 
+Remove Elements/Objects From ArrayList in Java?
+Iterator<Integer> itr = numbers.iterator();
+
+// remove all even numbers
+while (itr.hasNext()) {
+    Integer number = itr.next();
+
+       if (number % 2 == 0) {
+       itr.remove();// if you use number.remove() you will et exception;
+    }
+
+}
 
 
  
