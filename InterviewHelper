@@ -319,6 +319,31 @@ q> controller uses which design pattern ?
 Q> how to implement a cache of size 5  with eviction policy ?(LRU implementation using java )
 Q>  Remove Elements/Objects From ArrayList in Java?
 
+Q> Apple interview question 
+----------------------------
+Q>what is idempotenet in Rest and what areall the methods are idempoteent and which are all not?
+Q>what is the difference between contenttype header and accept?
+Q>difference between eh cache and raddis ?
+Q>whcih database you want to use for a banking application and reason ? explain in detail ideas
+Q> there is a callcenter you are given with there start time and end time for all the customer care exeutives ,we need to support the customer for 24 hurs with minimun cost .
+caller1 10:00--- 11:00
+caller2 11:00-----11:30
+''''''''''''
+''''''''''''
+
+caller20    20:00 ----23:00
+timing in 24 hour format;
+
+write an algorithim for the same 
+Q> how can we break a normal singleton class(double locking is the answer)?
+Q> how to avoid sql injection priblem ?
+Q> can multiple thread share a common heap and how ?]
+ ans: yes , the locked object would be in heap , and shared by all the threads
+Q>what is the priority based message sending in rabbit mq?
+Q>how eviction  works in  LRU ?
+
+    
+
 
 
 
