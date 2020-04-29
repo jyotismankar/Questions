@@ -346,6 +346,12 @@ ans : (use multithreading)
 Q> Find kth heighest number from an array , with complexity O(n);
 
 
+
+Q> how do trace memory leak in your programme ?
+Q> how websocket works , or remort process call (RPC works)
+Q> producer consumer using blocking queue where multiple consumer would be there?
+Q> singleton pattern and abstract factory pattern ?programme
+Q> 
     
 
 
