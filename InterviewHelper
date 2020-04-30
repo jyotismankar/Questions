@@ -352,6 +352,15 @@ Q> how websocket works , or remort process call (RPC works)
 Q> producer consumer using blocking queue where multiple consumer would be there?
 Q> singleton pattern and abstract factory pattern ?programme
 Q> 
+
+
+Q>how to designa  cunsom exception by passing your own parameter .
+Q>create two threads and flattern there response on one .
+Q>source of entitymanager 
+Q>if i want to  create a bean if a properties file parameter is there .
+Q>type to create  spring bean .
+Q>using stream how to create a map by using filter 
+
     
 
 
