@@ -90,6 +90,186 @@ while (itr.hasNext()) {
 
 }
 
+Q7> How to Write custom Exception ?
+Ans: 
+public class MyUncheckedBusinessException extends RuntimeException {
 
+	private final ErrorCode code;
+
+	public MyUncheckedBusinessException(ErrorCode code) {
+		super();
+		this.code = code;
+	}
+
+	public MyUncheckedBusinessException(String message, Throwable cause, ErrorCode code) {
+		super(message, cause);
+		this.code = code;
+	}
+
+	public MyUncheckedBusinessException(String message, ErrorCode code) {
+		super(message);
+		this.code = code;
+	}
+
+	public MyUncheckedBusinessException(Throwable cause, ErrorCode code) {
+		super(cause);
+		this.code = code;
+	}
+	
+	public ErrorCode getCode() {
+		return this.code;
+	}
+}
+
+call the function like this :
+
+private void wrapException(String input) {
+	try {
+		// do something
+	} catch (NumberFormatException e) {
+		throw new MyUncheckedBusinessException("A message that describes the error.", e, ErrorCode.INVALID_PORT_CONFIGURATION);
+	}
+}
+
+Q8> SpringBoot Exception Hnadle ?
+
+public class ApiError {
  
+    private HttpStatus status;
+    private String message;
+    private List<String> errors;
  
+    public ApiError(HttpStatus status, String message, List<String> errors) {
+        super();
+        this.status = status;
+        this.message = message;
+        this.errors = errors;
+    }
+ 
+    public ApiError(HttpStatus status, String message, String error) {
+        super();
+        this.status = status;
+        this.message = message;
+        errors = Arrays.asList(error);
+    }
+}
+
+@ControllerAdvice
+public class RestResponseEntityExceptionHandler 
+  extends ResponseEntityExceptionHandler {
+ 
+    @ExceptionHandler({ Exception.class })
+    public ResponseEntity<Object> handleAll(Exception ex, WebRequest request) {
+    ApiError apiError = new ApiError(
+      HttpStatus.INTERNAL_SERVER_ERROR, ex.getLocalizedMessage(), "error occurred");
+    return new ResponseEntity<Object>(
+      apiError, new HttpHeaders(), apiError.getStatus());
+}
+     
+    ...
+}
+ 
+Q9>validation in Springboot bean ?
+@Size(min = 3, max = 20)
+@Pattern(regexp=".+@.+\\.[a-z]+")
+@max
+@min
+@NotNull(message = "First name is compulsory")
+@NotBlank(message = "First name is compulsory")
+@Pattern(regexp = "[a-z-A-Z]*", message = "First name has invalid characters")
+
+use @valid to the baan like this ?
+
+findElement(@valid @ResponseBody Employee e) {
+}
+
+Q10> What is spring Actuator ?
+Q11> some important usefull  springboot Annotations?
+
+> @Bean
+This annotation is used at the method level. @Bean annotation works with @Configuration to create Spring beans
+if we want to create a bean and register it to a springcontainer then use this @bean , 
+exa:
+@Configuration
+public class AppConfig {
+    @Bean
+    public TransferService transferService() {
+        return new TransferServiceImpl();
+    }
+}
+> @Lazy
+This annotation is used on component classes. By default all autowired dependencies are created and configured at startup. 
+But if you want to initialize a bean lazily, you can use @Lazy annotation over the class. 
+This means that the bean will be created and initialized only when it is first requested for. 
+You can also use this annotation on @Configuration classes. This indicates that all @Bean methods within that @Configuration should be
+lazily initialized.
+
+> @EnableAutoConfiguration    vs   @ComponentScan ?
+@EnableAutoConfiguration annotation tells Spring Boot to "guess" how you will want to configure Spring, based on the jar dependencies
+ that you have added. For example, If HSQLDB is on your classpath, and you have not manually configured any database connection beans,
+then Spring will auto-configure an in-memory database.
+@EnableAutoConfiguration automatically configures the Spring application based on its included jar files, 
+it sets up defaults or helper based on dependencies in pom.xml. 
+Auto-configuration is usually applied based on the classpath and the defined beans. Therefore,
+\we donot need to define any of the DataSource, EntityManagerFactory, TransactionManager etc and magically based on the classpath, 
+Spring Boot automatically creates proper beans and registers them for us. 
+
+@ComponentScan : 
+it provides scope for spring component scan, it simply goes though the provided base package and picks up dependencies
+required by @Bean or @Autowired etc
+
+> SpringBootApplication 
+Actually the @SpringBootApplication annotation is equivalent to using @Configuration, @EnableAutoConfiguration and
+@ComponentScan with their default attributes.
+
+>@InitBinder
+This annotation is a method level annotation that plays the role of identifying the methods which initialize the WebDataBinder -
+a DataBinder that binds the request parameter to JavaBean objects. To customise request parameter data binding , 
+you can use @InitBinder annotated methods within our controller. The methods annotated with @InitBinder all argument types that handler methods support.
+The @InitBinder annotated methods will get called for each HTTP request if you don’t specify the value element of this annotation.
+The value element can be a single or multiple form names or request parameters that the init binder method is applied to.
+
+
+
+Q12> what is Spring Boot CLI?
+ The Spring Boot CLI is a Command Line Interface for Spring Boot.
+ It can be used for a quick start with Spring.
+ It can run Groovy scripts which means that a developer need not write boilerplate code; 
+ all that is needed is focus on business logic.Spring Boot CLI is the fastest way to create a Spring-based application.
+
+Q14> Difference between @RequestParam and @RequestAttribute?
+
+@RequestAttribute is to access objects which have been populated on the server-side but during the same HTTP request, 
+for example they can be populated in an interceptor or a filter.
+exa?
+The interceptor
+public class MyCounterInterceptor extends HandlerInterceptorAdapter {
+  private AtomicInteger counter = new AtomicInteger(0);
+
+  @Override
+  public boolean preHandle (HttpServletRequest request,
+                            HttpServletResponse response,
+                            Object handler) throws Exception {
+
+      request.setAttribute("visitorCounter", counter.incrementAndGet());// set the value from interceptor
+      return true;
+  }
+}
+The controller
+@Controller
+public class ExampleController {
+
+  @RequestMapping("/")
+  @ResponseBody
+  public String handle (@RequestAttribute("visitorCounter") Integer counter) {
+      return String.format("Visitor number: %d", counter);
+  }
+}
+
+@QueryParam and @RequestParam both are same , but @RequestParam is from spring , but QueryParam is from JAXRS
+
+Q> @ConditionalOnProperty?
+
+
+
+
