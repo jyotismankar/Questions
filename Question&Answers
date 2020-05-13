@@ -184,6 +184,14 @@ findElement(@valid @ResponseBody Employee e) {
 }
 
 Q10> What is spring Actuator ?
+Actuator is mainly used to expose operational information about the running application – health, metrics, info, dump, env, etc.
+using this we can monitor health of our running application .its inbuild just we need to add boot dependecy , 
+and some useful endpoints are:
+/metrics: endpoint shows several useful metrics information like JVM memory used, system CPU usage, open files,
+/beans – returns all available beans in our BeanFactory.
+/health – summarises the health status of our application
+/info – returns general information. It might be custom data, build information or details about the latest commit
+
 Q11> some important usefull  springboot Annotations?
 
 > @Bean
@@ -269,6 +277,24 @@ public class ExampleController {
 @QueryParam and @RequestParam both are same , but @RequestParam is from spring , but QueryParam is from JAXRS
 
 Q> @ConditionalOnProperty?
+
+Q>what will happen if we remoce @ResponseBody from controller ?
+then the returned string will treated a  webpage , as the webpage is not found the 404 will be thrown .
+exa: 
+@Controller
+@RequestMapping(value = "test")
+
+public class TestController {
+
+    @RequestMapping(value = "/m1")
+    public @ResponseBody String testMethod(){
+        return "Hello First Application";
+    }
+}
+
+o/p : Hello First Application; (If you remove @ResponseBody then o/p wpuld be 404, as the response would be treated as webpage)
+alternative to @controller and @ResponseBody ,  is @RestController 
+
 
 
 
