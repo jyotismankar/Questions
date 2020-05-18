@@ -302,4 +302,6 @@ Q> how to run a array of 5 elemets, if each element to process will take 2s, how
 ans: if you use parallel stream then it uses forkjoin, which uses 4 thread at a time,  then to process this array it will take at least
 4 seconds, then how to sdo it in 2 seconds ?
 Q> How the spring authentication service works in spring , ?
-Q> 
+Q> difference between application.yml and bootstrap.yml?
+Q> what are terminal operator and intermediate operator in java 8 ?
+
