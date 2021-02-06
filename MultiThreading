@@ -5,5 +5,129 @@
   One practical usage of CountDownLatch is when in an application, we need to make multiple service calls, where all the calls are processed in separate threads, and the main application must wait until all the threads are processed completely.
 
   In multi-threaded applications, most of the time, CountDownLatch proves to be very useful for thread management.
+  
+  Example :   https://howtodoinjava.com/java/multi-threading/when-to-use-countdownlatch-java-concurrency-example-tutorial/
+  Example application using CountDownLatch
+In this example, I have simulated an application startup class which starts N threads that will check for external systems and report back to latch, on which startup class is waiting. As soon as all services are verified and checked, startup proceeds.
+
+BaseHealthChecker.java : This class is a Runnable and parent for all specific external service health checkers. This remove the code duplicacy and central control over latch.
+
+public abstract class BaseHealthChecker implements Runnable {
+     
+    private CountDownLatch _latch;
+    private String _serviceName;
+    private boolean _serviceUp;
+     
+    //Get latch object in constructor so that after completing the task, thread can countDown() the latch
+    public BaseHealthChecker(String serviceName, CountDownLatch latch)
+    {
+        super();
+        this._latch = latch;
+        this._serviceName = serviceName;
+        this._serviceUp = false;
+    }
+ 
+    @Override
+    public void run() {
+        try {
+            verifyService();
+            _serviceUp = true;
+        } catch (Throwable t) {
+            t.printStackTrace(System.err);
+            _serviceUp = false;
+        } finally {
+            if(_latch != null) {
+                _latch.countDown();
+            }
+        }
+    }
+ 
+    public String getServiceName() {
+        return _serviceName;
+    }
+ 
+    public boolean isServiceUp() {
+        return _serviceUp;
+    }
+    //This methos needs to be implemented by all specific service checker
+    public abstract void verifyService();
+}
+NetworkHealthChecker.java : This class extends BaseHealthChecker and needs to provide only implementation of verifyService() method. DatabaseHealthChecker.java and CacheHealthChecker.java are same as NetworkHealthChecker.java apart from their service names and sleep time.
+
+public class NetworkHealthChecker extends BaseHealthChecker
+{
+    public NetworkHealthChecker (CountDownLatch latch)  {
+        super("Network Service", latch);
+    }
+     
+    @Override
+    public void verifyService() 
+    {
+        System.out.println("Checking " + this.getServiceName());
+        try
+        {
+            Thread.sleep(7000);
+        } 
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+        System.out.println(this.getServiceName() + " is UP");
+    }
+}
+ApplicationStartupUtil.java : This clas is main startup class which initilizes the latch and wait of this latch till all services are checked.
+
+public class ApplicationStartupUtil 
+{
+    //List of service checkers
+    private static List<BaseHealthChecker> _services;
+     
+    //This latch will be used to wait on
+    private static CountDownLatch _latch;
+     
+    private ApplicationStartupUtil()
+    {
+    }
+     
+    private final static ApplicationStartupUtil INSTANCE = new ApplicationStartupUtil();
+     
+    public static ApplicationStartupUtil getInstance()
+    {
+        return INSTANCE;
+    }
+     
+    public static boolean checkExternalServices() throws Exception
+    {
+        //Initialize the latch with number of service checkers
+        _latch = new CountDownLatch(3);
+         
+        //All add checker in lists
+        _services = new ArrayList<BaseHealthChecker>();
+        _services.add(new NetworkHealthChecker(_latch));
+        _services.add(new CacheHealthChecker(_latch));
+        _services.add(new DatabaseHealthChecker(_latch));
+         
+        //Start service checkers using executor framework
+        Executor executor = Executors.newFixedThreadPool(_services.size());
+         
+        for(final BaseHealthChecker v : _services) 
+        {
+            executor.execute(v);
+        }
+         
+        //Now wait till all services are checked
+        _latch.await();
+         
+        //Services are file and now proceed startup
+        for(final BaseHealthChecker v : _services) 
+        {
+            if( ! v.isServiceUp())
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
 
 2> 
