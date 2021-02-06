@@ -1,0 +1,9 @@
+1> CountDownLatch
+  It can be initialized only once, and cannot be reused once it is released i.e. the count reaches zero.
+  It's generally used when we have one main thread, which in turn initiates other threads and has to wait for the child threads to complete.
+  Practical Application
+  One practical usage of CountDownLatch is when in an application, we need to make multiple service calls, where all the calls are processed in separate threads, and the main application must wait until all the threads are processed completely.
+
+  In multi-threaded applications, most of the time, CountDownLatch proves to be very useful for thread management.
+
+2> 
