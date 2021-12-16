@@ -1,0 +1,21 @@
+read all env from springboot application -actuator
+get all beans from springboot application -actuator
+asynchronous communication in microservices communication- how 
+complitablefuture
+----
+
+//Given an array of positive number, you have to find maximum possible sum from the array, 
+//where only constraint is , you cannot pick two adjacent array elements.
+
+//Ex- {6, 7, 1, 3, 8, 2, 4} : Here 6, 1, 8 and 4 are picked to make maximum sum i.e 19 , 
+//from the array with the given constraint
+//Ex2 : {5, 3, 4, 11, 2} : -> 5+11 = 16
+
+----
+Design a movie ticket booking system .
+Expected Functionalities:
+1. Different theaters with multiple screen and shows support.
+2. User should be able to search movies with name that shows 
+   all screens and cinemas with time available for that movie for that day
+3. User should be able to book ticket for seats
+----
